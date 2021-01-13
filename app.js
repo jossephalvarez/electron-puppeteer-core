@@ -342,6 +342,27 @@ await browser.close();
 await allDone();
 }
 
+// TODO jalvarezv it works but i dont know how to show page
+async function testPuppeteer() {
+
+    let launchOptions = { headless: false,
+        executablePath: exPath2,
+        args: ['--start-maximized'] };
+
+    const browser = await puppeteer.launch(launchOptions);
+
+//launches started popup
+    started();
+    const page = await browser.newPage();
+    // set viewport and user agent (just in case for nice viewing)
+    await page.setViewport({width: 1366, height: 768});
+    await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36');
+
+    await page.goto('https://mvaneijgen.nl/');
+    await page.screenshot({ path: './image.jpg', type: 'jpeg' });
+    await allDone();
+}
+
 
 
 
@@ -355,6 +376,13 @@ function fileSelect(fileName, outputFolder){
 resultArr=expiredFile.Sheet1;
 physicianScraper(outputFolder);
 };
+
+// TODO jalvarezv it works
+function runPuppeteer(){
+    console.log('fileSelected');
+    testPuppeteer();
+}
+
 
 //Updates path to Chrome app on user's machine
 
@@ -375,7 +403,10 @@ ipcMain.on('pathSelectRun', () => {
 //Catch fileNameSent
 ipcMain.on('fileNameSent', (e, fileName, outputFolder) => {
   //console.log('file name sent caught')
-  fileSelect(fileName, outputFolder);
+  //fileSelect(fileName, outputFolder);
+    //testPuppeteer();
+    // TODO jalvarezv
+    runPuppeteer();
 });
 
 
