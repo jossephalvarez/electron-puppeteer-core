@@ -1,3 +1,7 @@
 release-builds/
 node_modules/
 /.idea/misc.xml
+/httpRequests/
+/modules.xml
+/scraper.iml
+/vcs.xml
