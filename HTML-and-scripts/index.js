@@ -50,12 +50,12 @@ document.getElementById('path-select-btn').addEventListener('click', pathSelectR
  }
 
  function run(){
-   if (document.getElementById("outputFolderField").value ==='' || document.getElementById("fileValue").value ===''){
+/*   if (document.getElementById("outputFolderField").value ==='' || document.getElementById("fileValue").value ===''){
      console.log('warning running')
       return ipcRenderer.send('pleaseSelectTrigger');
-   }
+   }*/
 
-   ipcRenderer.send('fileNameSent', fileName, outputFolder);
+   ipcRenderer.send('fileNameSent');
    console.log('real deal running')
  }
 
