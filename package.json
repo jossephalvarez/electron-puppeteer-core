@@ -8,15 +8,15 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64  --prune=true --out=release-builds",
-  "package-win": "electron-packager . Lscraper-app --overwrite --asar=true --platform=win32 --arch=ia32  --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Scraper App\"",
-  "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --prune=true --out=release-builds"
+    "package-win": "electron-packager . Lscraper-app --overwrite --asar=true --platform=win32 --arch=ia32  --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Scraper App\"",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --prune=true --out=release-builds"
   },
   "keywords": [],
   "author": "Alex Ruma",
   "license": "ISC",
   "dependencies": {
     "convert-excel-to-json": "^1.6.1",
-    "puppeteer-core": "^1.15.0",
+    "puppeteer-core": "5.5.0",
     "yarn": "^1.15.2"
   },
   "devDependencies": {
